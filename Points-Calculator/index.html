@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Points Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let points;
+        let bonusPoints;
+        let totalPoints;
+
+        points = prompt("Enter your points: ", "")
+        points = Number(points);
+
+        while (!Number(points) || points <= 0 || points > 9) {
+            alert("Not valid points! Try again!");
+            points = prompt("Enter your points: ", "")
+            points = Number(points);
+        }
+
+        let multiplicator;
+
+        if (points >= 1 && points <= 3) {
+            multiplicator = 10;
+        } else if (points >= 4 && points <= 6) {
+            multiplicator = 100;
+        } else if (points >= 7 && points <= 9) {
+            multiplicator = 1000;
+        }
+
+        bonusPoints = points * multiplicator;
+        totalPoints = bonusPoints + points;
+
+        document.write(`<div><h1>Exercise 1: Points calculator</h1></div>`);
+        document.write(`<div><p>Input points: ${points}</p>
+                <p>*</p>
+                <p>Multiplicator: ${multiplicator}</p>
+                <p>=</p>
+                <p>Bonus points: ${bonusPoints}</p>
+                </div>`);
+        document.write(`<div><p>Input points: ${points}</p>
+            <p>+</p>
+            <p>Bonus points: ${bonusPoints}</p>
+            <p>=</p>
+            <p>Total points: ${totalPoints}</p></div>`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
